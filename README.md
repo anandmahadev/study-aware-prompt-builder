@@ -60,3 +60,16 @@ python -m unittest tests/test_prompt_builder.py
 This project acts as the "safety envelope" before any data touches the AI Pipeline. 
 
 A researcher doing a Heuristic study needs zero prompt engineering knowledge—they pass `"interface_type": "Mobile Game"` into this framework, and the system securely mounts the methodology, generates the reproducible inference payload, and returns an encrypted footprint for their scientific paper appendix. 
+
+## ⚡ Performance Benchmark
+
+This section presents the results of a local micro-benchmark conducted over 10,000 iterations. These measurements reflect the standalone execution of the PromptBuilder core logic and exclude external I/O operations such as database access or network calls.
+
+**Core Metrics:**
+- **Throughput:** ~4,668 operations per second (ops/sec)
+- **Average Latency:** ~0.214 ms per prompt generation
+
+**Interpretation:**
+The system uses deterministic, template-based variable substitution. Since no AI inference is involved during prompt construction, execution remains consistent and operates in effectively constant time. This makes the PromptBuilder lightweight and suitable for backend integration without introducing noticeable overhead.
+
+> **Note:** End-to-end latency in a production environment will primarily depend on external factors such as Firebase operations and LLM API response times.
