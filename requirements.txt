@@ -1,0 +1,2 @@
+# This is a core Python application utilizing Standard Libs only
+# No external dependencies are currently required.
