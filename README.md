@@ -4,13 +4,13 @@ A methodology-aware Python framework that generates, manages, and strict-validat
 
 Designed explicitly as a foundational prototype for **RUXAILAB (GSoC)**, this system targets the core scientific need for **reproducibility** in AI-assisted evaluations.
 
-## 🎯 Architecture Paradigm & Scientific Rigor
+##  Architecture Paradigm & Scientific Rigor
 1. **Traceability (The "Audit Hash")**: Generates a standard UTC timestamp and a unique `trace_hash` (SHA-256) for every prompt executed. Research papers can publish these hashes to prove methodology validity.
 2. **Framework Safety**: Uses custom `PromptBuilderError` exception hierarchies (`MissingParameterError`, `TemplateLoadError`) ensuring the pipeline gracefully halts rather than feeding junk data to an LLM. 
 3. **Advanced Python Tooling**: Embraces strict static type hinting (`typing`), `dataclasses`, and the runtime `logging` module to serve as an industrial-grade backend service.
 4. **Command-Line Interface (CLI)**: Features an `argparse`-powered shell utility, mimicking standard data-science UX workflows.
 
-## 📂 Folder Structure
+##  Folder Structure
 ```
 study-aware-prompt-builder/
 │── templates/
@@ -31,7 +31,7 @@ study-aware-prompt-builder/
 │── requirements.txt              # Zero dependencies! Standard library only.
 ```
 
-## 🚀 How to Run It
+##  How to Run It
 
 Because it avoids heavy frameworks (no Flask/FastAPI), it relies entirely on the built-in Python standard library.
 
@@ -65,12 +65,12 @@ Verify that strict parameter evaluation, missing key detection, and JSON schemas
 python -m unittest tests/test_prompt_builder.py
 ```
 
-## 🧠 Why This Matters to RUXAILAB
+##  Why This Matters to RUXAILAB
 This project acts as the "safety envelope" before any data touches the AI Pipeline. 
 
 A researcher doing a Heuristic study needs zero prompt engineering knowledge—they pass `"interface_type": "Mobile Game"` into this framework, and the system securely mounts the methodology, generates the reproducible inference payload, and returns an encrypted footprint for their scientific paper appendix. 
 
-## ⚡ Performance Benchmark
+##  Performance Benchmark
 
 This section presents the results of a local micro-benchmark conducted over 10,000 iterations. These measurements reflect the standalone execution of the PromptBuilder core logic and exclude external I/O operations such as database access or network calls.
 
