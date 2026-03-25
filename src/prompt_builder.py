@@ -8,7 +8,12 @@ from typing import Dict, Any, Set
 from dataclasses import dataclass
 
 # Custom Exceptions
-from src.exceptions import TemplateLoadError, MissingParameterError, ParameterTypeError
+from src.exceptions import (
+    TemplateLoadError, 
+    MissingParameterError, 
+    ParameterTypeError, 
+    TemplateValidationError
+)
 
 # Professional Logging setup
 logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(levelname)s | %(message)s')
@@ -62,7 +67,18 @@ class PromptBuilder:
         pattern = r"\{\{\s*([a-zA-Z0-9_]+)\s*\}\}"
         matches = re.findall(pattern, self.template_text)
         self.required_parameters = set(matches)
+        
+        if not self.required_parameters:
+            raise TemplateValidationError(
+                f"The template '{self.metadata.get('methodology')}' contains no valid {{ {{placeholder}} }} tags."
+            )
+        
         logger.debug(f"Discovered parameters: {self.required_parameters}")
+
+    @property
+    def placeholders(self) -> Set[str]:
+        """Provides a safe, read-only set of discovered placeholders."""
+        return self.required_parameters.copy()
 
     def validate_parameters(self, parameters: Dict[str, Any]) -> None:
         """Strict schema enforcement to prevent dirty LLM outputs."""

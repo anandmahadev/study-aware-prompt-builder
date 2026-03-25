@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "methodology": "Competitive Analysis",
+    "author": "RUXAILAB Contributor"
+  },
+  "template": "You are a UX Researcher conducting a Competitive Analysis study between a target application and its competitors.\n\nTarget Interface: {{target_interface}}\nCompetitor Context: {{competitor_name}}\nAnalysis Focus: {{analysis_metric}} (e.g., Onboarding Flow, Information Architecture)\n\nTask:\n1. Compare the UX patterns between the target and the competitor for the specified focus area.\n2. identify specific areas where the target application excels or lags behind.\n3. provide a set of actionable insights to achieve competitive parity or advantage."
+}

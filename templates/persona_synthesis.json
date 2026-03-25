@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "methodology": "User Persona Synthesis",
+    "author": "RUXAILAB Contributor"
+  },
+  "template": "As a UX Strategist, your goal is to synthesize user research data into a detailed user persona profile for a {{product_category}} application.\n\nTarget User Segment: {{target_segment}}\nInitial Research Context: {{research_findings}}\n\nTask:\n1. Create a detailed persona including demographics, frustrations, and professional goals.\n2. Include specific user pain points derived from the provided research context.\n3. Propose a typical 'day-in-the-life' scenario for the resulting persona while interacting with the specified product category."
+}

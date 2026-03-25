@@ -15,3 +15,7 @@ class MissingParameterError(PromptBuilderError):
 class ParameterTypeError(PromptBuilderError):
     """Raised when injected variables are of an invalid type (e.g., passing nested dicts instead of strings)."""
     pass
+
+class TemplateValidationError(PromptBuilderError):
+    """Raised when a successfully loaded template is logically invalid (e.g., has no {{placeholders}})."""
+    pass
