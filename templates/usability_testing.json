@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.1.0",
+    "methodology": "Usability Testing Plan",
+    "author": "Antigravity Assistant"
+  },
+  "template": "As a UX researcher, design a usability testing plan for the {{feature_name}} of a {{product_type}} application with {{participant_profile}} participants.\n\nYour plan must include:\n1. **Research Objectives**: What do we want to learn about the {{feature_name}}?\n2. **Task Scenarios**: 2-3 specific tasks participants will perform.\n3. **Success Metrics**: How will we measure success? (e.g., error rate, time-on-task)\n4. **Interview Questions**: Pre-test and post-test questions for {{participant_profile}} users."
+}

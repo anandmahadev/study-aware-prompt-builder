@@ -36,22 +36,31 @@ study-aware-prompt-builder/
 Because it avoids heavy frameworks (no Flask/FastAPI), it relies entirely on the built-in Python standard library.
 
 ### Option 1: The Command Line Interface (CLI)
-*The most professional way to integrate this into bash/shell pipelines .*
+*The most professional way to integrate this into bash/shell pipelines.*
 
-Navigate into the root directory of the project, then run the `cli.py` passing the template and JSON parameters.
-
-**For Linux / macOS / Windows Command Prompt (cmd.exe):**
+**1. List Available Methodologies:**
 ```bash
-python -m src.cli -t templates/heuristic_template.json -p "{\"interface_type\": \"Medical Dashboard\", \"user_type\": \"Nurses\", \"heuristic_focus\": \"Visibility of system status\"}"
+python -m src.cli --list
 ```
 
-**For Windows PowerShell:**
-*(PowerShell string parsing can strip JSON quotes. Prefixing with `cmd.exe /c` is the most reliable workaround.)*
-```powershell
+**2. Interactive Prompt Building (Best for Researchers):**
+If you don't want to write complex JSON, simply pass the template and let the tool prompt you:
+```bash
+python -m src.cli -t templates/usability_testing.json
+```
+
+**3. Single-Line Pipeline Generation:**
+```bash
+# Windows (cmd.exe / PowerShell)
 cmd.exe /c 'python -m src.cli -t templates/heuristic_template.json -p "{\"interface_type\": \"Medical Dashboard\", \"user_type\": \"Nurses\", \"heuristic_focus\": \"Visibility of system status\"}"'
 ```
 
-*Output will directly stream the traceable hash and prompt to stdout.*
+**4. Export to Research Markdown:**
+Save your prompt trace (complete with Audit Hash) directly for your scientific appendix:
+```bash
+python -m src.cli -t templates/usability_testing.json -o research_trace_checkout_v1.md
+```
+*Output will stream the traceable hash to stdout and save the full trace to the file.*
 
 ### Option 2: Run the Standard Examples program
 ```bash
