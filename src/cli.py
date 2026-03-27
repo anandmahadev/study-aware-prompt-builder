@@ -9,6 +9,21 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from src.prompt_builder import PromptBuilder
 from src.exceptions import PromptBuilderError
 
+BANNER = r"""
+  ____  _            _             _                              
+ / ___|| |_ _   _  __| |_   _     / \__      ____ _ _ __ ___      
+ \___ \| __| | | |/ _` | | | |   / _ \ \ /\ / / _` | '__/ _ \     
+  ___) | |_| |_| | (_| | |_| |  / ___ \ V  V / (_| | | |  __/     
+ |____/ \__|\__,_|\__,_|\__, | /_/   \_\_/\_/ \__,_|_|  \___|     
+                        |___/                                     
+  ____                            _     ____       _ _     _      
+ |  _ \ _ __ ___  _ __ ___  _ __ | |_  | __ ) _  _(_) | __| | ___ _ __ 
+ | |_) | '__/ _ \| '_ ` _ \| '_ \| __| |  _ \| | | | | |/ _` |/ _ \ '__|
+ |  __/| | | (_) | | | | | | |_) | |_  | |_) | |_| | | | (_| |  __/ |   
+ |_|   |_|  \___/|_| |_| |_| .__/ \__| |____/ \__,_|_|_|\__,_|\___|_|   
+                           |_|                                          
+"""
+
 def parse_inline_params(param_str: str) -> dict:
     try:
         return json.loads(param_str)
@@ -21,9 +36,9 @@ def list_templates():
     if not os.path.exists(template_dir):
         print(f"[!] Error: Could not find '{template_dir}' directory.")
         return
-     
+    
     print("\n=== [ Available RUXAILAB Methodologies ] ===")
-    files = [f for f in os.listdir(template_dir) if f.endswith('.json')]
+    files = [f for f in sorted(os.listdir(template_dir)) if f.endswith('.json')]
     for file in files:
         file_path = os.path.join(template_dir, file)
         try:
@@ -31,14 +46,16 @@ def list_templates():
                 data = json.load(f)
                 methodology = data.get("metadata", {}).get("methodology", "Unknown")
                 version = data.get("metadata", {}).get("version", "0.0.0")
-                print(f" - {file:<25} | {methodology:<20} (v{version})")
+                print(f" - {file:<30} | {methodology:<25} (v{version})")
         except:
-             print(f" - {file:<25} | [ERROR PARSING]")
+             print(f" - {file:<30} | [ERROR PARSING]")
     print("============================================\n")
 
 def run_cli():
+    print(BANNER)
     parser = argparse.ArgumentParser(
-        description="Study-Aware Prompt Builder: Generate methodology-safe, traceable AI Prompts."
+        description="Study-Aware Prompt Builder: A scientific interface for UX Research prompts (RUXAILAB standard).",
+        formatter_class=argparse.RawDescriptionHelpFormatter
     )
     
     parser.add_argument(
@@ -104,6 +121,7 @@ def run_cli():
         print("---------------------------------------------")
         print(result.prompt_text)
         print("=============================================\n")
+        print("[TIP] You've just generated a scientific prompt! Keep your RUXAILAB streak going by committing this result.")
 
         if args.output:
             if args.output.endswith('.md'):

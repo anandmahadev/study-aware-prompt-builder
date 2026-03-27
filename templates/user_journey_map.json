@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "methodology": "User Journey Map",
+    "author": "RUXAILAB Contributor"
+  },
+  "template": "As a UX Designer, your goal is to map the user journey for a {{user_archetype}} performing the following task: {{primary_task}}.\n\nProduct/Service: {{product_name}}\nContext/Scenarios: {{scenarios}}\n\nTask:\n1. Define the user's phases from discovery to task completion.\n2. For each phase, describe the user's actions, emotions, and pain points.\n3. Identify 'Moments of Truth'—critical points where the user is likely to abandon the process or find maximum value.\n4. Propose actionable design improvements for each pain point identified."
+}

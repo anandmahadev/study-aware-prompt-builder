@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "methodology": "Stakeholder Interview Guide",
+    "author": "RUXAILAB Contributor"
+  },
+  "template": "As a UX Researcher, your task is to design a stakeholder interview guide for the {{project_name}} project.\n\nStakeholder Role: {{stakeholder_role}}\nPrimary Business Goal: {{business_goal}}\nTechnical Constraints: {{constraints}}\n\nTask:\n1. Draft 5-7 open-ended questions targeting the stakeholder's vision for the product.\n2. Include questions specifically about success metrics (KPIs) from their perspective.\n3. Add a section for identifying 'unknown unknowns' regarding the target user base."
+}

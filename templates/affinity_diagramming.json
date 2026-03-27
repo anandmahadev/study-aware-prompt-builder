@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "methodology": "Affinity Diagramming",
+    "author": "RUXAILAB Contributor"
+  },
+  "template": "As a UX Researcher, your goal is to organize raw research observations from {{research_source}} into meaningful thematic clusters for the {{project_name}} project.\n\nInput Observations: {{observations}}\nResearch Goal: {{research_goals}}\n\nTask:\n1. Categorize the observations into 3-5 high-level themes based on user behavior or sentiment.\n2. For each theme, provide a concise summary of the key insight.\n3. Identify conflicting data points that may require further investigation."
+}
