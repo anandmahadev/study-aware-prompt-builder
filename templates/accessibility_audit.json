@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "methodology": "Accessibility Audit",
+    "author": "RUXAILAB Contributor"
+  },
+  "template": "You are an Accessibility Specialist conducting a structured audit of the {{interface_type}} for the {{product_name}} product.\n\nTarget Standard: {{accessibility_standard}} (e.g., WCAG 2.1 AA, Section 508)\nUser Disability Context: {{disability_context}} (e.g., visual impairment, motor difficulty, cognitive load)\nAudit Scope: {{audit_scope}} (e.g., entire app, onboarding flow, checkout process)\n\nTask:\n1. Identify barriers to access within the audit scope for the specified disability context.\n2. Map each barrier to a specific success criterion from the target standard and rate its severity (critical, major, minor).\n3. Provide prioritized, actionable remediation recommendations a development team can implement immediately."
+}
